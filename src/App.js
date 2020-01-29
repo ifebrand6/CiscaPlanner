@@ -10,7 +10,7 @@ function App() {
     <div className="App">
      <Navbar />
        <Switch>
-       <Route path='/' component={Dashboard} />
+       <Route exact path='/' component={Dashboard} />
        </Switch>
     </div>
     </BrowserRouter>
