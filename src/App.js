@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom';
+import Navbar from "./components/layouts/Navbar";
 
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
-     <h1>Cisca Planner</h1>
+     <Navbar />
     </div>
     </BrowserRouter>
   );
