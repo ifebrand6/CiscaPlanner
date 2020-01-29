@@ -7,8 +7,8 @@ import SignedoutLinks from "./SignedoutLinks";
 const Navbar = () => {
     return (
         <nav className="nav-wrapper grey darken-3">
-            <div className="">
-                <Link to='/' className="brand-logo left">Cisca Planner</Link>
+            <div className="container">
+                <Link to='/' className="brand-logo">Cisca Planner</Link>
                 <SignedinLinks />
                 <SignedoutLinks />
             </div>
