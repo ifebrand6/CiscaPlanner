@@ -1,22 +1,50 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {firestoreConnect} from 'react-redux-firebase'
+import {compose} from 'redux'
+
 
 const ProjectDetail = (props) => {
-        const id = props.match.params.id;
-    return (
-        <div className="container section project-details">
-            <div className="card z-depth-0">
-                <div className="card-content">
-                    <span className="card-title">project Title {id}</span>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint veniam deserunt architecto quos ipsam. Nulla laborum, quis enim quia architecto iure a similique voluptatem, hic temporibus sunt? Exercitationem, qui adipisci?</p>
-                </div>
-                <div className="card-action grey lighten-4 grey-text">
-                    <div>Posted By The Net Ninja</div>
-                    <div>@nd date</div>
+    const {project} = props;
+    if(project){
+        return (
+            <div className="container section project-details">
+                <div className="card z-depth-0">
+                    <div className="card-content">
+                        <span className="card-title">{project.title}</span>
+                        <p>{project.content}</p>
+                    </div>
+                    <div className="card-action grey lighten-4 grey-text">
+                        <div>Posted By The {project.authorFirstName} {project.authorLasttName}</div>
+                        <div>@nd date</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    } else{
+        return (
+            <div className="container center">
+            <p>Loading project...</p>
+            </div>
+        )
+    }  
+   
 }
-
-export default ProjectDetail
+const mapStateToProps = (state, ownProps) => {
+    const id = ownProps.match.params.id;
+    const projects = state.firestore.data.projects;
+    const project = projects ? projects[id] : null 
+     return {
+        project: project
+}
+}
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        {
+            collection: 'projects'
+        }
+    ])
+)
+(ProjectDetail)
 
