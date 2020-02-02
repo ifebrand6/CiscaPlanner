@@ -5,21 +5,22 @@ import { Link } from "react-router-dom";
 
 
 const ProjectList = ({projects}) => {
+    
     const projectList =
         projects && projects.map(project =>{
          return (
-             <Link to={'/project/' + project.id}>
-            <ProjectSummary project={project} keys={project.id} />  
+             <Link to={'/project/' + project.id } key={project.id}>
+            <ProjectSummary project={project}/>  
             </Link>
          )   
         })
     
-    console.log(projectList)
+  
     return (
         <div className="project-list section">
             
             {projectList}
-        </div>
+        </div> 
     )
 }
 export default ProjectList;
