@@ -39,7 +39,7 @@ import {Redirect} from 'react-router-dom'
                     <div className="input-field">
                         <button className="btn pink lighten-1 z-depth-0">Login</button>
                     </div>
-                    <div className="center" >
+                    <div className="center red-text" >
                         {authError ? <p>{authError} </p> : null}
                     </div>
                 </form>

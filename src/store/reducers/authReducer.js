@@ -1,5 +1,6 @@
 const initState = {
-    authError: null
+    authError: null,
+    // authStatus: null
 
 }
 const authReducer = (state = initState,action) => {
@@ -20,6 +21,18 @@ const authReducer = (state = initState,action) => {
                 console.log('singout successfully')
                 return {
                     ...state
+                }
+            case 'SIGNUP_SUCCESS':
+                console.log('sign up success')
+                return {
+                    ...state,
+                    authStatus: 'User profile created success'
+                }
+            case 'SIGNUP_ERROR':
+                console.log('sign up failed')
+                return {
+                    ...state,
+                    authStatus: 'Sign up error'
                 }
     
         default:
