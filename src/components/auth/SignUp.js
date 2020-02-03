@@ -9,13 +9,13 @@ class SignUp extends Component {
     }
     handleSubmit = (e)=> {
         e.preventDefault();
-        console.log(this.state )
+       // console.log(this.state )
     }
     handleChange = (e)=> {
         this.setState({
             [e.target.id]: e.target.value
         })
-        console.log(e)
+       // console.log(e)
     }
     render() {
         return (
