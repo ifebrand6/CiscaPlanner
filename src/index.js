@@ -21,7 +21,9 @@ const store  = createStore(alphaReducer,
 )
 );
 const rrfConfig = {
-    userProfile: 'users',
+    userProfile: "users",
+    useFirestoreForProfile: true,
+    attachAuthIsReady: true
 }
 const rrfProps = {
     firebase,

@@ -1,6 +1,6 @@
 const initState = {
     authError: null,
-    // authStatus: null
+    authStatus: null
 
 }
 const authReducer = (state = initState,action) => {
@@ -28,12 +28,12 @@ const authReducer = (state = initState,action) => {
                     ...state,
                     authStatus: 'User profile created success'
                 }
-            case 'SIGNUP_ERROR':
-                console.log('sign up failed')
-                return {
-                    ...state,
-                    authStatus: 'Sign up error'
-                }
+                case 'SIGNUP_ERROR':
+                    console.log('signup error')
+                    return {
+                        ...state,
+                        authError: action.err.message
+                    }
     
         default:
             return state;
