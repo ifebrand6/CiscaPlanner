@@ -1,7 +1,20 @@
 import React from "react";
 // import { NavLink } from "react-router-dom";
+import moment from 'moment'
 
-const Notifications = () => {
+const Notifications = (props) => {
+        const {notifications} = props
+        const notify = notifications && notifications.map((item) => {
+            return (
+                <ul className="notifications">
+                    <li key={item.id}>
+                        <span className="pink-text">{item.user} </span>
+                        <span> {item.content} </span>
+                        <div className="note-date grey-text">{moment(item.time.toDate()).fromNow()} </div>
+                    </li>    
+                </ul>
+            )          
+        })
     return (
         <div className="section">
             <div className="card z-depth-0">
@@ -9,9 +22,7 @@ const Notifications = () => {
                     <span className="card-title">
                        Notifications
                     </span>
-                    <ul className="notifications">
-                        <li>Notification</li>
-                    </ul>
+                        {notify}
                 </div>
             </div>
         </div>
