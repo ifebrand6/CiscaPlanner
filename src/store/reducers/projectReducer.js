@@ -13,7 +13,17 @@ const projectReducer = (state=initState,action) => {
         case 'CREATED_PROJECT_ERROR':
             console.log('created project', action.err)
             return state;
-        default:
+        case 'UPDATED_PROJECT':
+            console.log('created project', action.project)
+            return state;
+        case 'UPDATED_PROJECT_ERROR':
+            console.log('created project', action.err)
+        return state;
+        case 'GET_PROJECT':
+            console.log('fetch a single project', action.project)
+            return state;
+
+            default:
             return state;
     } 
 }

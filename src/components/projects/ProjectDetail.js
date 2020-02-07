@@ -4,6 +4,7 @@ import {firestoreConnect} from 'react-redux-firebase'
 import {compose} from 'redux'
 import {Redirect} from 'react-router-dom'
 import moment from 'moment'
+import {Link} from 'react-router-dom'
 
 const ProjectDetail = (props) => {
     const {project, auth} = props;
@@ -19,6 +20,11 @@ const ProjectDetail = (props) => {
                     <div className="card-action grey lighten-4 grey-text">
                         <div>Posted By The {project.authorFirstname} {project.authorLasttname}</div>
                         <div>{moment(project.createdAt.toDate()).calendar()}</div>
+                        <div className="but">
+                        <Link className='secondary-content' to={`/update/${project.id}`}>
+                            <i className='material-icons edit'>edit</i>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import moment from 'moment';
-// import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProjectSummary = ({project}) => {
     return (
@@ -9,6 +9,9 @@ const ProjectSummary = ({project}) => {
             <span className="card-title">{project.title}</span>
             <p>{`Posted by the ${project.authorFirstname} ${project.authorLasttname}`}</p>
             <p className="text-grey">{moment(project.createdAt.toDate()).calendar()}</p>
+            <Link className='secondary-content' to={`/update/${project.id}`}>
+            <i className='material-icons edit'>edit</i>
+            </Link>
         </div>
     </div>
     )
