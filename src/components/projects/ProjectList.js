@@ -39,8 +39,8 @@ class ProjectList extends Component {
             <div className="row justify-content-center">
             <div className="col-lg-11 col-xl-10">
                 <div className="page-header">
-                <h1>Brand Concept and Design</h1>
-                <p className="lead">Research, ideate and present brand concepts for client consideration</p>
+                <h1>Project List</h1>
+                <p className="lead">Easy Manage your team projects</p>
                 <div className="d-flex align-items-center">
                     <ul className="avatars">
                     <li>

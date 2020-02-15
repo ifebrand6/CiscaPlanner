@@ -4,7 +4,7 @@ import {firestoreConnect} from 'react-redux-firebase'
 import {compose} from 'redux'
 import {Redirect} from 'react-router-dom'
 import moment from 'moment'
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 import {deleteProject} from '../../store/actions/projectActions'
 
 class ProjectDetail extends Component {
@@ -27,16 +27,10 @@ class ProjectDetail extends Component {
                     <div className="row justify-content-center">
                         <div className="col-lg-11 col-xl-10">
                             <div className="page-header">
-                                <h1>Create brand mood boards</h1>
-                                <p className="lead">Assemble three distinct mood boards for client consideration</p>
+                                <h1>Project Detail</h1>
+                                <p className="lead"></p>
                                     <div className="d-flex align-items-center">
-                                        <ul className="avatars">
-                                            <li>
-                                                <Link to="nav-side-task.html#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Claire Connors">
-                                                    <img alt="Claire Connors" className="avatar" src="assets/img/avatar-female-1.jpg"/>
-                                                </Link>
-                                            </li>
-                                        </ul>
+                    
                                     </div>
                                 <div>
                             </div>
