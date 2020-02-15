@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Redirect } from 'react-router-dom'
 import {signUp} from '../../store/actions/authActions'
+import {Link} from 'react-router-dom'
 class SignUp extends Component {
     state = {
         firstName: '',
@@ -21,11 +22,11 @@ class SignUp extends Component {
        // console.log(e)
     }
     render() {
-        const {auth,authStatus} = this.props
+        const {authError,auth} = this.props
         if (auth.uid) {
             return <Redirect to='/'></Redirect>
         }
-        console.log(authStatus)
+        console.log(authError)
         return (
             <div className="form-body">
             <div className="row">
@@ -48,12 +49,12 @@ class SignUp extends Component {
                                 <input type="text" id="firstName" onChange={this.handleChange} placeholder="First Name" />
                                 <input type="text" id="lastName" onChange={this.handleChange} placeholder="Last Name" />
                                 <input type="email" id="email" onChange={this.handleChange} placeholder="E-mail Address" />
-                                <input className="form-control" type="password" name="password" placeholder="Password" />
+                                <input type="password" id="password" onChange={this.handleChange} placeholder="Password"  />
                                 <div className="form-button">
-                                    <button  type="submit" className="btn btn-outline-dark">Sign up</button> <a href="forget4.html">Forget password?</a>
+                                    <button className="btn btn-outline-dark">Sign up</button> <Link href="#">Forget password?</Link>
                                 </div>
                                 <div className="center red-text" >
-                                    {authStatus ? <p>{authStatus} </p> : null}
+                                    {authError ? <p>{authError} </p> : null}
                                 </div>
                             </form>
                             <div className="other-links">
@@ -69,7 +70,7 @@ class SignUp extends Component {
 }
 const mapStateToProps = (state) =>{
     return{
-        authStatus: state.auth.authStatus,
+        authError: state.auth.authError,   
         auth: state.firebase.auth
     }
 }

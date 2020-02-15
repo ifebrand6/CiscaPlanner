@@ -17,7 +17,7 @@ import {Link } from 'react-router-dom'
      }
      handleChange = (e)=> {
          this.setState({
-             [e.target.id]: e.target.value
+             [e.target.name]: e.target.value
          })
          //console.log(e)
      }
@@ -45,8 +45,8 @@ import {Link } from 'react-router-dom'
                                 <b className="">Login</b>
                             </div>
                             <form  onSubmit={this.handleSubmit}>
-                                <input type="email" id="email" onChange={this.handleChange} placeholder="E-mail Address" />
-                                <input className="form-control" type="password" id="email" onChange={this.handleChange} placeholder="Password" />
+                                <input type="email" name="email" id="email" onChange={this.handleChange} placeholder="E-mail Address" />
+                                <input className="form-control" name="password" type="password" id="email" onChange={this.handleChange} placeholder="Password" />
                                 <div className="form-button">
                                     <button id="submit" type="submit" className="ibtn">Login</button> <Link href="forget4.html">Forget password?</Link>
                                 </div>

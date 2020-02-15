@@ -14,7 +14,7 @@ class ProjectList extends Component {
     handleSubmit = (e)=> {
         e.preventDefault();
         this.props.createProject(this.state)
-        this.props.history.push('/')
+        this.setState({ showModal: false });
             // console.log(this.state )
     }
     handleChange = (e)=> {
@@ -64,7 +64,7 @@ class ProjectList extends Component {
                 <div className="tab-pane fade show active" id="tasks" role="tabpanel" data-filter-list="card-list-body">
                     <div className="row content-list-head">
                     <div className="col-auto">
-                        <h3>Tasks</h3>
+                        <h3>Projects</h3>
                         <button className="btn btn-round" data-toggle="modal" data-target="#task-add-modal">
                         <i className="material-icons">add</i>
                         </button>

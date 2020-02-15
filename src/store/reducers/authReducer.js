@@ -23,18 +23,18 @@ const authReducer = (state = initState,action) => {
                 return {
                     ...state
                 }
+          case 'SIGN_ERROR':
+                    console.log('signup error')
+                    return {
+                        ...state,
+                        authError: action.error.message
+                    }
             case 'SIGNUP_SUCCESS':
                 console.log('sign up success')
                 return {
                     ...state,
                     authStatus: 'User profile created success'
                 }
-                case 'SIGNUP_ERROR':
-                    console.log('signup error')
-                    return {
-                        ...state,
-                        authError: action.error.message
-                    }
                 case 'PROFILE_UPDATE_SUCCESS':
                     return {
                         ...state
