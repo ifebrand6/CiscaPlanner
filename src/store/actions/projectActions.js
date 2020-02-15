@@ -45,5 +45,40 @@ export const getAProject = (projectId) => {
     }
 }
 
+// export const deleteProject = (projectID) => {
+//     return (dispatch,getState,{getFirestore}) => {
+//         const firestore = getFirestore()
+//         firestore.collection('projects').doc(projectID).delete()
+//         .then(() => {
+//             dispatch({type: 'PROJECT_DELETE'})
+//         }).catch(()=> {
+//             dispatch({type: 'PROJECT_DELETE_ERROR'})
+//         })
+//     }
+// }
+// export const deleteProject = (id) => {
+//     console.log("dispatch", id) 
+//     return(dispatch, getState, {getFirestore}) => {
+//         const firestore = getFirestore();
+//         firestore.collection('projects').doc(id).delete()
+//         .then(() => {
+//             console.log('deleted') 
+//             dispatch({ type: 'DELETE_PROJECT_SUCCESS' });
+//         }).catch(err => {
+//             dispatch({ type: 'DELETE_PROJECT_ERROR' });
+//         })
+//     }
+//     }
+export const deleteProject = (id) => {
+    return (dispatch, getState, { getFirestore }) => {
+    const firestore = getFirestore()
+    firestore.collection('projects').doc(id).delete().then(() => {
+                    console.log('deleted') 
+                    dispatch({ type: 'PROJECT_DELETE' });
+                }).catch(error => {
+                    dispatch({ type: 'PROJECT_DELETE_ERROR', error });
+                })
+    }
+    }
 // TODO
-// catch the promise rather than using the else condition
+// catch the promise rather than using the else condition 5818908681963330f

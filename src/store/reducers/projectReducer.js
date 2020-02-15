@@ -22,6 +22,12 @@ const projectReducer = (state=initState,action) => {
         case 'GET_PROJECT':
             console.log('fetch a single project', action.project)
             return state;
+        case 'PROJECT_DELETE_ERROR':
+            console.log('application encouter an error deleting record', action.error.message)
+            return state;
+        case 'PROJECT_DELETE':
+            console.log('project deleted',action.project)
+            return state;
 
             default:
             return state;

@@ -1,10 +1,10 @@
 @charset "UTF-8";
 /*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+* Bootstrap v4.3.1 (https://getbootstrap.com/)
+* Copyright 2011-2019 The Bootstrap Authors
+* Copyright 2011-2019 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+*/
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -117,7 +117,7 @@ strong {
   font-weight: bolder; }
 
 small {
-  font-size: 80%; }
+  font-size: 80%; }  
 
 sub,
 sup {
@@ -133,7 +133,7 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
+  color: #fff;
   text-decoration: none;
   background-color: transparent; }
   a:hover {
@@ -1688,7 +1688,7 @@ textarea.form-control {
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
-     -moz-user-select: none;
+    -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   background-color: transparent;
@@ -2686,7 +2686,7 @@ input[type="button"].btn-block {
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   -webkit-appearance: none;
-     -moz-appearance: none;
+    -moz-appearance: none;
           appearance: none; }
   .custom-select:focus {
     border-color: #e9ecef;
@@ -2779,7 +2779,7 @@ input[type="button"].btn-block {
   padding: 0;
   background-color: transparent;
   -webkit-appearance: none;
-     -moz-appearance: none;
+    -moz-appearance: none;
           appearance: none; }
   .custom-range:focus {
     outline: none; }
@@ -2822,7 +2822,7 @@ input[type="button"].btn-block {
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     -moz-appearance: none;
-         appearance: none; }
+        appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-moz-range-thumb {
         transition: none; } }
@@ -2950,7 +2950,10 @@ input[type="button"].btn-block {
   display: none; }
 
 .tab-content > .active {
-  display: block; }
+  display: block;
+  max-height: 500px;
+  overflow-y: overlay;
+  overflow-x: hidden; }
 
 .navbar {
   position: relative;
@@ -3356,10 +3359,10 @@ input[type="button"].btn-block {
 @media (min-width: 576px) {
   .card-columns {
     -webkit-column-count: 3;
-       -moz-column-count: 3;
+      -moz-column-count: 3;
             column-count: 3;
     -webkit-column-gap: 1.25rem;
-       -moz-column-gap: 1.25rem;
+      -moz-column-gap: 1.25rem;
             column-gap: 1.25rem;
     orphans: 1;
     widows: 1; }
@@ -3995,7 +3998,7 @@ button.close {
   background-color: transparent;
   border: 0;
   -webkit-appearance: none;
-     -moz-appearance: none;
+    -moz-appearance: none;
           appearance: none; }
 
 a.close.disabled {
@@ -7586,7 +7589,7 @@ h3 + .btn-round, h5 + .btn-round {
     opacity: .25; }
   .checklist label {
     -webkit-user-select: none;
-       -moz-user-select: none;
+      -moz-user-select: none;
         -ms-user-select: none;
             user-select: none; }
   .checklist .draggable-source--is-dragging {
@@ -7766,7 +7769,7 @@ form.dropzone {
 .dz-file-representation img {
   position: absolute;
   -o-object-fit: cover;
-     object-fit: cover; }
+    object-fit: cover; }
 
 /** Dropzone inside a sidebar **/
 .sidebar form.dropzone {
@@ -8663,7 +8666,7 @@ label[class*='col'] {
     min-width: 450px; } }
 
 .page-header {
-  padding-top: 1.5rem;
+  padding-top: 80px;
   margin-bottom: 1.5rem; }
   .page-header .progress {
     margin-top: 1.5rem;
@@ -8698,12 +8701,12 @@ label[class*='col'] {
   overflow-x: scroll;
   display: flex;
   -webkit-user-select: none;
-     -moz-user-select: none;
+    -moz-user-select: none;
       -ms-user-select: none;
           user-select: none; }
   .kanban-board > .kanban-col {
     -webkit-user-select: none;
-       -moz-user-select: none;
+      -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
     flex: 1 0 auto;
@@ -8714,7 +8717,7 @@ label[class*='col'] {
     outline: none !important; }
     .kanban-board > .kanban-col .card-list {
       -webkit-user-select: none;
-         -moz-user-select: none;
+        -moz-user-select: none;
           -ms-user-select: none;
               user-select: none;
       max-height: 100%;
@@ -8733,7 +8736,7 @@ label[class*='col'] {
         top: 0; }
     .kanban-board > .kanban-col .card-list-body {
       -webkit-user-select: none;
-         -moz-user-select: none;
+        -moz-user-select: none;
           -ms-user-select: none;
               user-select: none;
       overflow-y: scroll; }
@@ -8764,7 +8767,7 @@ label[class*='col'] {
 
 .card-kanban {
   -webkit-user-select: none;
-     -moz-user-select: none;
+    -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   outline: none !important;
@@ -8791,7 +8794,9 @@ label[class*='col'] {
 
 @media (min-width: 992px) {
   .layout-nav-side {
-    display: flex; }
+    display: flex; 
+    padding-top: 50px;
+    padding-bottom: 70px;}
     .layout-nav-side > .navbar {
       padding: 1.5rem;
       width: 264px;
@@ -9250,10 +9255,10 @@ i.material-icons.h1, i.material-icons.h2, i.material-icons.h3, i.material-icons.
   
 
 /**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
+* prism.js default theme for JavaScript, CSS and HTML
+* Based on dabblet (http://dabblet.com)
+* @author Lea Verou
+*/
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;

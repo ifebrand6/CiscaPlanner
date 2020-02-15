@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {signIn} from '../../store/actions/authActions'
 import {Redirect} from 'react-router-dom'
-
+import {Link } from 'react-router-dom'
 
  class SignIn extends Component {
      state = {
@@ -26,25 +26,42 @@ import {Redirect} from 'react-router-dom'
         const {authError,auth} = this.props;
         if(auth.uid) return <Redirect to='/'></Redirect>
         return (
-            <div className="container">
-                <form onSubmit={this.handleSubmit} className="white">
-                    <h5 className="grey-text text-darken-3">Sign In</h5>
-                    <div className="input-field">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" onChange={this.handleChange}/>
-                    </div> 
-                    <div className="input-field">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" onChange={this.handleChange}/>
+            
+            <div className="form-body">
+            <div className="row">
+                <div className="img-holder">
+                    <div className="bg"></div>
+                    <div className="info-holder">
+                        <img src="images/graphic1.svg" alt=""/>
                     </div>
-                    <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Login</button>
+                </div>
+                <div className="form-holder">
+                    <div className="form-content">
+                        <div className="form-items">
+                        <br/>
+                            <h3>Get more things done with Cisca Planner.</h3>
+                            <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                            <div className="page-links">
+                                <b className="">Login</b>
+                            </div>
+                            <form  onSubmit={this.handleSubmit}>
+                                <input type="email" id="email" onChange={this.handleChange} placeholder="E-mail Address" />
+                                <input className="form-control" type="password" id="email" onChange={this.handleChange} placeholder="Password" />
+                                <div className="form-button">
+                                    <button id="submit" type="submit" className="ibtn">Login</button> <Link href="forget4.html">Forget password?</Link>
+                                </div>
+                                <div className="center red-text" >
+                                    {authError ? <p>{authError} </p> : null}
+                                </div>
+                            </form>
+                            <div className="other-links">
+                                <span>Or login with</span><Link href="login4.html#">Facebook</Link><Link href="login4.html#">Google</Link><Link href="login4.html#">Linkedin</Link>
+                            </div>
+                        </div>
                     </div>
-                    <div className="center red-text" >
-                        {authError ? <p>{authError} </p> : null}
-                    </div>
-                </form>
+                </div>
             </div>
+        </div>
         )
     }
 }

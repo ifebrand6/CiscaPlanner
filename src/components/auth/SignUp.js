@@ -27,33 +27,43 @@ class SignUp extends Component {
         }
         console.log(authStatus)
         return (
-            <div className="container">
-                <form onSubmit={this.handleSubmit} className="white">
-                    <h5 className="grey-text text-darken-3">Sign Up</h5>
-                    <div className="input-field">
-                        <label htmlFor="firstName">First Name</label>
-                        <input type="text" id="firstName" onChange={this.handleChange}/>
+            <div className="form-body">
+            <div className="row">
+                <div className="img-holder">
+                    <div className="bg"></div>
+                    <div className="info-holder">
+                        <img src="images/graphic1.svg" alt=""/>
                     </div>
-                    <div className="input-field">
-                        <label htmlFor="lastName">Last Name</label>
-                        <input type="text" id="lastName" onChange={this.handleChange}/>
+                </div>
+                <div className="form-holder">
+                    <div className="form-content">
+                        <div className="form-items">
+                        <br/>
+                            <h3>Get more things done with Cisca Planner.</h3>
+                            <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                            <div className="page-links">
+                                <b className="">Register</b>
+                            </div>
+                            <form  onSubmit={this.handleSubmit}>
+                                <input type="text" id="firstName" onChange={this.handleChange} placeholder="First Name" />
+                                <input type="text" id="lastName" onChange={this.handleChange} placeholder="Last Name" />
+                                <input type="email" id="email" onChange={this.handleChange} placeholder="E-mail Address" />
+                                <input className="form-control" type="password" name="password" placeholder="Password" />
+                                <div className="form-button">
+                                    <button  type="submit" className="btn btn-outline-dark">Sign up</button> <a href="forget4.html">Forget password?</a>
+                                </div>
+                                <div className="center red-text" >
+                                    {authStatus ? <p>{authStatus} </p> : null}
+                                </div>
+                            </form>
+                            <div className="other-links">
+                                <span>Or login with</span><a href="login4.html#">Facebook</a><a href="login4.html#">Google</a><a href="login4.html#">Linkedin</a>
+                            </div>
+                        </div>
                     </div>
-                    <div className="input-field">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" onChange={this.handleChange}/>
-                    </div>
-                    <div className="input-field">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" onChange={this.handleChange}/>
-                    </div>
-                    <div className="center red-text" >
-                        {authStatus ? <p>{authStatus} </p> : null}
-                    </div>
-                    <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Sign Up</button>
-                    </div>
-                </form>
+                </div>
             </div>
+        </div>
         )
     }
 }

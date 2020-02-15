@@ -9,14 +9,20 @@ const Navbar = (props) => {
         const {auth,profile_int} = props
         const links =  auth.uid ? <SignedinLinks profile_int={profile_int} /> : <SignedoutLinks />;
     return (
-        <nav className="nav-wrapper grey darken-3">
-            <div className="">
-                <Link to='/' className="brand-logo left">Cisca Planner</Link>
-                {auth.isLoaded &&
-                links
-                }
-            </div>
+        <nav className="navbar navbar-light bg-white fixed-top shadow-sm ">
+        <div className="container">
+        <Link className="navbar-brand"  to='/'>
+            <img src="img/logo.png"  alt="" className="img-fluid logo-header" />
+            CISCA PLANNER
+        </Link>
+        <nav className="action">
+            {auth.isLoaded &&
+            links
+            }
         </nav>
+        </div>
+        <span className="border-bottom"></span>
+    </nav>
     )
 }
 const mapStateToProps = (state) =>{

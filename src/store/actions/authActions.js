@@ -4,12 +4,12 @@ export const signIn = (credentials) => {
        // const firebase = getFirebase();
         
         firebase.auth().signInWithEmailAndPassword(
-        credentials.email,
+        credentials.email.trim(),
         credentials.password
         ).then(() => {
         dispatch({ type: 'LOGIN_SUCCESS' });
-        }).catch((err) => {
-        dispatch({ type: 'LOGIN_ERROR', err });
+        }).catch((error) => {
+        dispatch({ type: 'LOGIN_ERROR', error });
         });
     
     }
@@ -36,9 +36,20 @@ export const signUp = (newUser) => {
             })
         }).then(() => {
             dispatch({ type: 'SIGNUP_SUCCESS'})
-        }).catch((err)  => {
-            dispatch({type: 'SIGNUP_ERROR'}, err)
+        }).catch((error)  => {
+            dispatch({type: 'SIGNUP_ERROR'}, error)
             })
     }
 
+}
+export const updateProfile = (userProfile) => {
+    return (dispatch,getState,{getFirebase}) => {
+        const firebase = getFirebase();
+        firebase.auth().updateCurrentUser(userProfile).then
+        (()=> {
+            dispatch({type: 'PROFILE_UPDATE_SUCCESS'})
+        }).catch((error) =>{
+            dispatch({type: 'PROFILE_UPDATE_FAILED'})
+        })
+    }
 }
