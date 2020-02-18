@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/CiscaPlanner/static/css/main.d1b05096.chunk.css",
+    "main.js": "/CiscaPlanner/static/js/main.b9f5d7d3.chunk.js",
+    "main.js.map": "/CiscaPlanner/static/js/main.b9f5d7d3.chunk.js.map",
+    "runtime-main.js": "/CiscaPlanner/static/js/runtime-main.54ac5828.js",
+    "runtime-main.js.map": "/CiscaPlanner/static/js/runtime-main.54ac5828.js.map",
+    "static/js/2.0984f8d1.chunk.js": "/CiscaPlanner/static/js/2.0984f8d1.chunk.js",
+    "static/js/2.0984f8d1.chunk.js.map": "/CiscaPlanner/static/js/2.0984f8d1.chunk.js.map",
+    "index.html": "/CiscaPlanner/index.html",
+    "precache-manifest.352ad17e496a4ef32ad356ec0cd69a4c.js": "/CiscaPlanner/precache-manifest.352ad17e496a4ef32ad356ec0cd69a4c.js",
+    "service-worker.js": "/CiscaPlanner/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/CiscaPlanner/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.0984f8d1.chunk.js.LICENSE": "/CiscaPlanner/static/js/2.0984f8d1.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.54ac5828.js",
+    "static/js/2.0984f8d1.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.b9f5d7d3.chunk.js"
+  ]
+}
